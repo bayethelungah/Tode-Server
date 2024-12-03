@@ -26,13 +26,7 @@ app.use(cors(corsOptions));
 
  
 app.post("/api/dependencies", (req: Request, res: Response) => {
-  
-  const dependencyTree: DependencyNode = {
-    name: "root",
-    dependencies: [req.body]
-  };
-
-  console.log("Request Body:", req.body);
+  const dependencyTree: DependencyNode = parseDependencies(req.body);
   res.send(dependencyTree);
 });
 
