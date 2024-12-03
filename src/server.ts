@@ -1,13 +1,18 @@
 import express, { raw, Request, Response } from "express";
 import cors from "cors";  
 import { DependencyNode } from "./models/DependencyNode";
+import { parseDependencies } from "./parseDependencies";
+
+// initialize dotenv
+import dotenv from 'dotenv';
+dotenv.config(); 
 
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 const corsOptions = {
-  origin: "http://localhost:5173", // Replace with your client URL
+  origin: process.env.CLIENT_URL, // Replace with your client URL
   methods: ["GET", "POST"],        // Specify allowed HTTP methods
   allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
 };
