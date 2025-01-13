@@ -4,7 +4,9 @@
   "description": "The server for the Tode-Client",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch src --ext ts --exec ts-node src/server.ts"
+    "dev": "nodemon --watch src --ext ts --exec ts-node src/server.ts",
+    "build": "tsc --outDir dist",
+    "start": "node dist/server.js"
   },
   "author": "Bayethe Lungah",
   "license": "MIT",

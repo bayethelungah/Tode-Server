@@ -1,5 +1,11 @@
-export interface DependencyNode {
+import { TodeResponseMessageBody } from "./ServerIO";
+import { Status } from "./Status";
+
+export interface DependencyNode extends TodeResponseMessageBody {
     name: string;
     version: string;
-    dependencies: DependencyNode[] | null;
+    status: Status;
+    repoLink: string | null;
+    dependencies: {[key: string]: DependencyNode} | null;
+    description: string | null;
 }
