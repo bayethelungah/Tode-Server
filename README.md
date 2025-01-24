@@ -27,3 +27,9 @@ Follow these instructions to set up and run the backend locally.
    ```bash
    git clone https://github.com/your-username/dependency-walker-backend.git
    cd dependency-walker-backend
+   ```
+
+2. run npm install
+   ```bash
+   npm install
+   ``` 
